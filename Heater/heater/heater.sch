@@ -113,60 +113,29 @@ Connection ~ 2200 2400
 $Comp
 L power:VCC #PWR0105
 U 1 1 5F81DB25
-P 4150 1700
-F 0 "#PWR0105" H 4150 1550 50  0001 C CNN
-F 1 "VCC" H 4165 1873 50  0000 C CNN
-F 2 "" H 4150 1700 50  0001 C CNN
-F 3 "" H 4150 1700 50  0001 C CNN
-	1    4150 1700
+P 4800 1350
+F 0 "#PWR0105" H 4800 1200 50  0001 C CNN
+F 1 "VCC" H 4815 1523 50  0000 C CNN
+F 2 "" H 4800 1350 50  0001 C CNN
+F 3 "" H 4800 1350 50  0001 C CNN
+	1    4800 1350
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0106
 U 1 1 5F81DE71
-P 3500 2050
-F 0 "#PWR0106" H 3500 1800 50  0001 C CNN
-F 1 "GND" H 3505 1877 50  0000 C CNN
-F 2 "" H 3500 2050 50  0001 C CNN
-F 3 "" H 3500 2050 50  0001 C CNN
-	1    3500 2050
+P 5000 2100
+F 0 "#PWR0106" H 5000 1850 50  0001 C CNN
+F 1 "GND" H 5005 1927 50  0000 C CNN
+F 2 "" H 5000 2100 50  0001 C CNN
+F 3 "" H 5000 2100 50  0001 C CNN
+	1    5000 2100
 	1    0    0    -1  
 $EndComp
-Text Label 4100 2150 2    50   ~ 0
+Text Label 4350 2000 2    50   ~ 0
 Heat_Control
 Text Label 1400 2050 0    50   ~ 0
 Heat_Control
-$Comp
-L Connector:Conn_01x05_Female J1
-U 1 1 5F82558B
-P 4400 1950
-F 0 "J1" H 4400 2250 50  0000 L CNN
-F 1 " " H 4428 1885 50  0000 L CNN
-F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-5_1x05_P5.00mm_Horizontal" H 4400 1950 50  0001 C CNN
-F 3 "~" H 4400 1950 50  0001 C CNN
-	1    4400 1950
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4200 1750 4150 1750
-Wire Wire Line
-	4150 1750 4150 1700
-Wire Wire Line
-	4200 1950 4150 1950
-Wire Wire Line
-	4150 1950 4150 1750
-Connection ~ 4150 1750
-Wire Wire Line
-	4200 1850 3500 1850
-Wire Wire Line
-	3500 1850 3500 2050
-Wire Wire Line
-	4200 2050 3500 2050
-Connection ~ 3500 2050
-Wire Wire Line
-	4100 2150 4200 2150
-Text Notes 4500 2150 0    50   ~ 0
-Power\nGND\nFan+\nFan-\nData
 $Comp
 L Device:R_Small_US R3
 U 1 1 5F83A4AF
@@ -245,4 +214,126 @@ Wire Wire Line
 Connection ~ 2200 1800
 Wire Wire Line
 	2200 1800 2200 1850
+$Comp
+L power:+12V #PWR0103
+U 1 1 5F889262
+P 5000 1350
+F 0 "#PWR0103" H 5000 1200 50  0001 C CNN
+F 1 "+12V" H 5015 1523 50  0000 C CNN
+F 2 "" H 5000 1350 50  0001 C CNN
+F 3 "" H 5000 1350 50  0001 C CNN
+	1    5000 1350
+	1    0    0    -1  
+$EndComp
+Text Notes 5550 2000 0    50   ~ 0
+12V\nFan+\nFan-\nPower\nGND\nData
+Wire Wire Line
+	4800 1350 4800 1800
+Wire Wire Line
+	4800 1800 5250 1800
+Wire Wire Line
+	5250 1600 5000 1600
+Wire Wire Line
+	4350 2000 5250 2000
+Wire Wire Line
+	5250 1700 4350 1700
+Text Label 4350 1700 2    50   ~ 0
+Fan_Lowside
+$Comp
+L Device:Q_NMOS_GSD Q2
+U 1 1 5F89A74A
+P 2100 3000
+F 0 "Q2" H 2304 3046 50  0000 L CNN
+F 1 "IRF7401TRPBF" H 2304 2955 50  0000 L CNN
+F 2 "Package_SO:SO-8_3.9x4.9mm_P1.27mm" H 2300 3100 50  0001 C CNN
+F 3 "~" H 2100 3000 50  0001 C CNN
+	1    2100 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x06_Female J1
+U 1 1 5F89E31E
+P 5450 1700
+F 0 "J1" H 5400 2000 50  0000 L CNN
+F 1 " " H 5478 1585 50  0000 L CNN
+F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-6_1x06_P5.00mm_Horizontal" H 5450 1700 50  0001 C CNN
+F 3 "~" H 5450 1700 50  0001 C CNN
+	1    5450 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 1350 5000 1500
+Wire Wire Line
+	5250 1500 5000 1500
+Connection ~ 5000 1500
+Wire Wire Line
+	5000 1500 5000 1600
+Wire Wire Line
+	5250 1900 5000 1900
+Wire Wire Line
+	5000 1900 5000 2100
+Wire Wire Line
+	1900 3000 1900 2050
+Connection ~ 1900 2050
+Wire Wire Line
+	2200 2800 2200 2750
+Wire Wire Line
+	2200 2750 2300 2750
+Text Label 2300 2750 0    50   ~ 0
+Fan_Lowside
+$Comp
+L power:GND #PWR0104
+U 1 1 5F8A33F4
+P 2200 3300
+F 0 "#PWR0104" H 2200 3050 50  0001 C CNN
+F 1 "GND" H 2205 3127 50  0000 C CNN
+F 2 "" H 2200 3300 50  0001 C CNN
+F 3 "" H 2200 3300 50  0001 C CNN
+	1    2200 3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2200 3200 2200 3300
+$Comp
+L Device:LED D3
+U 1 1 5F89D85A
+P 3400 2050
+F 0 "D3" V 3439 1932 50  0000 R CNN
+F 1 "AMBER" V 3348 1932 50  0000 R CNN
+F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3400 2050 50  0001 C CNN
+F 3 "~" H 3400 2050 50  0001 C CNN
+	1    3400 2050
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3400 2200 3400 2400
+Wire Wire Line
+	3400 2400 2950 2400
+Connection ~ 2950 2400
+$Comp
+L Device:R_Small_US R7
+U 1 1 5F89E5AE
+P 3400 1700
+F 0 "R7" H 3468 1746 50  0000 L CNN
+F 1 "1k" H 3468 1655 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3400 1700 50  0001 C CNN
+F 3 "~" H 3400 1700 50  0001 C CNN
+	1    3400 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3400 1900 3400 1800
+Wire Wire Line
+	3400 1300 3400 1600
+$Comp
+L power:+12V #PWR0107
+U 1 1 5F8A0706
+P 3400 1300
+F 0 "#PWR0107" H 3400 1150 50  0001 C CNN
+F 1 "+12V" H 3415 1473 50  0000 C CNN
+F 2 "" H 3400 1300 50  0001 C CNN
+F 3 "" H 3400 1300 50  0001 C CNN
+	1    3400 1300
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
